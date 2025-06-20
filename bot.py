@@ -2,6 +2,7 @@ import aiohttp
 import asyncio
 import warnings
 import pytz
+import logging
 from datetime import datetime, timedelta
 from pytz import timezone
 from pyrogram import Client, __version__
