@@ -28,7 +28,7 @@ class Config:
     ADMINS = ADMIN
 
     # Database Configuration
-    DB_URL = environ.get("DB_URL", "your_mongo_uri")
+    DB_URL = environ.get("DB_URL", "mongodb+srv://newleech:newleech@cluster0.9islxvy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
     DB_NAME = environ.get("DB_NAME", "AutoRenameBot")
 
     # Channels & Media
@@ -42,7 +42,7 @@ class Config:
     WEBHOOK = environ.get("WEBHOOK", "True").lower() == "true"
     BOT_UPTIME = environ.get("BOT_UPTIME", "")
     TOKEN_ID_LENGTH = 8
-    SHORTENER_API = environ.get("SHORTENER_API", "default_api")
+    SHORTENER_API = environ.get("SHORTENER_API", "")
     SHORTENER_URL = environ.get("SHORTENER_URL", "urlshortx.com")
 
     # File Config
