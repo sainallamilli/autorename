@@ -40,13 +40,13 @@ class Bot(Client):
             try:
                 # Send a request to the web server to keep it alive
                 async with aiohttp.ClientSession() as session:
-                    async with session.get("http://localhost:5000") as response:
+                    async with session.get(f"http://localhost:{Config.PORT}") as response:
                         if response.status == 200:
-                            print("Ping successful")
+                            logging.info("Ping successful")
                         else:
-                            print("Ping failed with status:", response.status)
+                            logging.warning("Ping failed with status:", response.status)
             except Exception as e:
-                print("Error while pinging:", e)
+                logging.error("Error while pinging:", e)
 
             # Wait for 5 minutes before sending the next ping
             await asyncio.sleep(300)  # 300 seconds = 5 minutes
