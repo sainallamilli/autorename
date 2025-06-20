@@ -20,6 +20,7 @@ class Config:
     
     BOT_TOKEN = environ.get("BOT_TOKEN", "7512154282:AAFGm5R7s_9iCDRmlj5VrFSkJheimWV-rZM")
     BOT_USERNAME = environ.get("BOT_USERNAME", "Tesfyrdcboybot")
+    PORT = int(environ.get("PORT", "8080"))
     
     # Admin Configuration
     ADMIN = list(map(int, environ.get("ADMIN", "7970350353").split()))
