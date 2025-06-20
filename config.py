@@ -20,7 +20,6 @@ class Config:
     
     BOT_TOKEN = environ.get("BOT_TOKEN", "7512154282:AAFGm5R7s_9iCDRmlj5VrFSkJheimWV-rZM")
     BOT_USERNAME = environ.get("BOT_USERNAME", "Tesfyrdcboybot")
-    PORT = int(environ.get("PORT", "8080"))
     
     # Admin Configuration
     ADMIN = list(map(int, environ.get("ADMIN", "7970350353").split()))
@@ -35,6 +34,7 @@ class Config:
     LOG_CHANNEL = int(environ.get("LOG_CHANNEL", "0")) if environ.get("LOG_CHANNEL") else None
     
     # Media Configuration
+    PORT = int(environ.get("PORT", "8080"))
     START_PIC = environ.get("START_PIC", "https://graph.org/file/a27d85469761da836337c.jpg")
     SETTINGS_PHOTO = environ.get("SETTINGS_PHOTO", "https://graph.org/file/a27d85469761da836337c.jpg")
     
