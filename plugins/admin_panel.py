@@ -48,10 +48,7 @@ async def add_tokens(bot: Client, message: Message):
         user_ref = " ".join(user_info).strip()
         
         # Try to get user ID from mention or username
-        if user_ref.startswith("@"):
-            user = await DARKXSIDE78.col.find_one({"username": user_ref[1:]})
-        else:
-            user = await DARKXSIDE78.col.find_one({"_id": int(user_ref)})
+        user = await get_user_by_ref(user_ref)
         
         if not user:
             return await message.reply_text("User not found!")
@@ -70,11 +67,8 @@ async def remove_tokens(bot: Client, message: Message):
     try:
         _, amount, *user_info = message.text.split()
         user_ref = " ".join(user_info).strip()
-        
-        if user_ref.startswith("@"):
-            user = await DARKXSIDE78.col.find_one({"username": user_ref[1:]})
-        else:
-            user = await DARKXSIDE78.col.find_one({"_id": int(user_ref)})
+       
+        user = await get_user_by_ref(user_ref)
         
         if not user:
             return await message.reply_text("User not found!")
@@ -95,10 +89,7 @@ async def add_premium(bot: Client, message: Message):
         duration = duration.lower()
         
         # Get user
-        if user_ref.startswith("@"):
-            user = await DARKXSIDE78.col.find_one({"username": user_ref[1:]})
-        else:
-            user = await DARKXSIDE78.col.find_one({"_id": int(user_ref)})
+       user = await get_user_by_ref(user_ref)
         
         if not user:
             return await message.reply_text("User not found!")
@@ -133,10 +124,7 @@ async def remove_premium(bot: Client, message: Message):
     try:
         _, user_ref = message.text.split(maxsplit=1)
         
-        if user_ref.startswith("@"):
-            user = await DARKXSIDE78.col.find_one({"username": user_ref[1:]})
-        else:
-            user = await DARKXSIDE78.col.find_one({"_id": int(user_ref)})
+       user = await get_user_by_ref(user_ref)
         
         if not user:
             return await message.reply_text("User not found!")
