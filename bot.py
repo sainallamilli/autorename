@@ -61,10 +61,10 @@ class Bot(Client):
         if Config.WEBHOOK:
             app = web.AppRunner(await web_server())
             await app.setup()       
-            await web.TCPSite(app, "0.0.0.0", 5022).start()
-            print("Web server started on port 5022")
-            
-        print(f"{me.first_name} Is Started.....✨️")
+            await web.TCPSite(app, "0.0.0.0", Config.PORT).start()
+            logging.info(f"Web server started on port {Config.PORT}")
+
+        logging.info(f"{me.first_name} Is Started.....✨️")
 
         # Calculate uptime using timedelta
         uptime_seconds = int(time.time() - self.start_time)
