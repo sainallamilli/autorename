@@ -22,11 +22,11 @@ class Config:
     BOT_USERNAME = environ.get("BOT_USERNAME", "AutoRenameDBot")
     
     # Admin Configuration
-    ADMIN = list(map(int, environ.get("ADMIN", "1074804932").split()))
+    ADMIN = list(map(int, environ.get("ADMIN", "1077880102").split()))
     ADMINS = ADMIN  # For compatibility with uploaded files
     
     # Database Configuration
-    DB_URL = environ.get("DB_URL", "mongodb+srv://ZeroTwo:aloksingh@zerotwo.3q3ij.mongodb.net/?retryWrites=true&w=majority")
+    DB_URL = environ.get("DB_URL", "mongodb+srv://newleech:newleech@cluster0.9islxvy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
     DB_NAME = environ.get("DB_NAME", "AutoRenameBot")
     
     # Channels Configuration
@@ -44,8 +44,8 @@ class Config:
     
     # Token System Configuration
     TOKEN_ID_LENGTH = 8
-    SHORTENER_API = environ.get("SHORTENER_API", "")
-    SHORTENER_URL = environ.get("SHORTENER_URL", "")
+    SHORTENER_API = environ.get("SHORTENER_API", "72ac8c94409d87e12b5357265192b637769ae67f")
+    SHORTENER_URL = environ.get("SHORTENER_URL", "urlshortx.com")
     
     # File Processing Configuration
     MAX_FILE_SIZE = 2 * 1024 * 1024 * 1024  # 2GB
