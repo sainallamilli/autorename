@@ -34,7 +34,7 @@ async def restart_bot(b, m):
 async def show_leaderboard(bot: Client, message: Message):
     try:
         users = await DARKXSIDE78.col.find().sort(&quot;rename_count&quot;, -1).limit(10).to_list(10)
-        leaderboard = [&quot;&lt;b&gt;🏆 Top 10 Renamers 🏆&lt;/b&gt;\n&quot;]
+        leaderboard = ["<b>🏆 Top 10 Renamers 🏆</b>\n"]
         
         for idx, user in enumerate(users, 1):
             name = user.get(&#39;first_name&#39;, &#39;Unknown&#39;).strip() or &quot;Anonymous&quot;
