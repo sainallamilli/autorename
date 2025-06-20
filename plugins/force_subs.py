@@ -7,14 +7,17 @@ from config import Config
 FORCE_SUB_CHANNELS = Config.FORCE_SUB_CHANNELS
 IMAGE_URL = "https://graph.org/file/a27d85469761da836337c.jpg"
 
-async def not_subscribed(_, __, message):
+async def not_subscribed(_, client, message):
     for channel in FORCE_SUB_CHANNELS:
         try:
-            user = await message._client.get_chat_member(channel, message.from_user.id)
-            if user.status in {"kicked", "left"}:
+            user = await client.get_chat_member(channel, message.from_user.id)
+            if user.status == "kicked":
                 return True
         except UserNotParticipant:
             return True
+        except Exception as e:
+            logging.error(e)
+            return True # In case of other errors, block access
     return False
 
 @Client.on_message(filters.private & filters.create(not_subscribed))
