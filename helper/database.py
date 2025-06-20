@@ -6,16 +6,18 @@ import logging
 
 class Database:
     def __init__(self, uri, database_name):
+        self._client = motor.motor_asyncio.AsyncIOMotorClient(uri)
+        self.db = self._client[database_name]
+        self.col = self.db.user
+        self.token_links = self.db.token_links
+
+    async def connect(self):
         try:
-            self._client = motor.motor_asyncio.AsyncIOMotorClient(uri)
-            self._client.server_info()
+            await self._client.server_info()
             logging.info("Successfully connected to MongoDB")
         except Exception as e:
             logging.error(f"Failed to connect to MongoDB: {e}")
-            raise e
-        self.DARKXSIDE78 = self._client[database_name]
-        self.col = self.DARKXSIDE78.user
-        self.token_links = self.DARKXSIDE78.token_links
+            raise
 
     def new_user(self, id):
         return dict(
