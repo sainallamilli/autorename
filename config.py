@@ -22,7 +22,11 @@ class Config:
     BOT_USERNAME = environ.get("BOT_USERNAME", "AutoRenameDBot")
     
     # Admin Configuration
+try:
     ADMIN = list(map(int, environ.get("ADMIN", "1077880102").split()))
+except ValueError:
+    ADMIN = []
+    print("Warning: ADMIN environment variable is not a valid list of integers.")
     ADMINS = ADMIN  # For compatibility with uploaded files
     
     # Database Configuration
