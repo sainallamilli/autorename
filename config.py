@@ -18,11 +18,11 @@ class Config:
         API_ID = 0
         API_HASH = ""
     
-    BOT_TOKEN = environ.get("BOT_TOKEN", "7512154282:AAFGm5R7s_9iCDRmlj5VrFSkJheimWV-rZM")
-    BOT_USERNAME = environ.get("BOT_USERNAME", "Tesfyrdcboybot")
+    BOT_TOKEN = environ.get("BOT_TOKEN", "7921283663:AAHlHXQHMa0LAnbyFI-9yquzNDV_aZLoDaM")
+    BOT_USERNAME = environ.get("BOT_USERNAME", "AutoRenameDBot")
     
     # Admin Configuration
-    ADMIN = list(map(int, environ.get("ADMIN", "7970350353").split()))
+    ADMIN = list(map(int, environ.get("ADMIN", "1074804932").split()))
     ADMINS = ADMIN  # For compatibility with uploaded files
     
     # Database Configuration
@@ -30,13 +30,13 @@ class Config:
     DB_NAME = environ.get("DB_NAME", "AutoRenameBot")
     
     # Channels Configuration
-    FORCE_SUB_CHANNELS = environ.get("FORCE_SUB_CHANNELS", "").split(",") if environ.get("FORCE_SUB_CHANNELS") else []
-    LOG_CHANNEL = int(environ.get("LOG_CHANNEL", "0")) if environ.get("LOG_CHANNEL") else None
+    FORCE_SUB_CHANNELS = environ.get("FORCE_SUB_CHANNELS", "-1001533796760").split(",") if environ.get("FORCE_SUB_CHANNELS") else []
+    LOG_CHANNEL = int(environ.get("LOG_CHANNEL", "-1002578247466")) if environ.get("LOG_CHANNEL") else None
     
     # Media Configuration
     PORT = int(environ.get("PORT", "8080"))
-    START_PIC = environ.get("START_PIC", "https://graph.org/file/a27d85469761da836337c.jpg")
-    SETTINGS_PHOTO = environ.get("SETTINGS_PHOTO", "https://graph.org/file/a27d85469761da836337c.jpg")
+    START_PIC = environ.get("START_PIC", "https://i.ibb.co/M5fHdYxt/9aa5e0bdcc9c.jpg")
+    SETTINGS_PHOTO = environ.get("SETTINGS_PHOTO", "https://i.ibb.co/M5fHdYxt/9aa5e0bdcc9c.jpg")
     
     # Server Configuration
     WEBHOOK = environ.get("WEBHOOK", "True").lower() == "true"
@@ -67,13 +67,13 @@ class Txt:
 
     ABOUT_TXT = """
 ╭───────────⍟
-├🤖 **ᴍy ɴᴀᴍᴇ:** [ᴀᴜᴛᴏ ʀᴇɴᴀᴍᴇ](https://t.me/AutoRenameBot)
+├🤖 **ᴍy ɴᴀᴍᴇ:** [ᴀᴜᴛᴏ ʀᴇɴᴀᴍᴇ](https://t.me/AutoRenameDBot)
 ├🖥️ **ꜱᴇʀᴠᴇʀ:** Heroku
 ├📕 **ʟɪʙʀᴀʀy:** Pyrogram
 ├✏️ **ʟᴀɴɢᴜᴀɢᴇ:** Python 3
 ├📂 **ᴅᴀᴛᴀʙᴀꜱᴇ:** MongoDB
 ├📊 **ʙᴏᴛ ᴠᴇʀꜱɪᴏɴ:** v2.7.8
-├🌟 **ᴀᴜᴛʜᴏʀ:** [DARKXSIDE78](https://t.me/DARKXSIDE78)
+├🌟 **ᴀᴜᴛʜᴏʀ:** [ᴘsᴘᴋ](https://t.me/PSPKADMINBOT)
 ╰───────────⍟
 """
 
@@ -149,7 +149,7 @@ class Txt:
 • Monthly/Yearly subscriptions available
 • Special discounts for bulk purchases
 
-**💬 Contact:** @Bots_Nations_Support
+**💬 Contact:** @PSPKADMINBOT
 """
 
     FILE_NAME_TXT = """
