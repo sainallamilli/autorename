@@ -16,7 +16,7 @@ class Config:
         API_ID = 0
         API_HASH = ""
 
-    BOT_TOKEN = environ.get("BOT_TOKEN", "your_token")
+    BOT_TOKEN = environ.get("BOT_TOKEN", "7921283663:AAHlHXQHMa0LAnbyFI-9yquzNDV_aZLoDaM")
     BOT_USERNAME = environ.get("BOT_USERNAME", "AutoRenameDBot")
 
     # Admin Configuration
@@ -42,7 +42,7 @@ class Config:
     WEBHOOK = environ.get("WEBHOOK", "True").lower() == "true"
     BOT_UPTIME = environ.get("BOT_UPTIME", "")
     TOKEN_ID_LENGTH = 8
-    SHORTENER_API = environ.get("SHORTENER_API", "")
+    SHORTENER_API = environ.get("SHORTENER_API", "72ac8c94409d87e12b5357265192b637769ae67f")
     SHORTENER_URL = environ.get("SHORTENER_URL", "urlshortx.com")
 
     # File Config
@@ -51,12 +51,129 @@ class Config:
     ANTI_NSFW_ENABLED = environ.get("ANTI_NSFW_ENABLED", "True").lower() == "true"
 
 
-# ✅ Now outside the Config class
 class Txt:
-    START_TXT = """Hello {} 👋 ..."""  # keep rest as-is
-    ABOUT_TXT = """..."""
-    HELP_TXT = """..."""
-    META_TXT = """..."""
-    PREMIUM_TXT = """..."""
-    FILE_NAME_TXT = """..."""
-    PROGRESS_BAR = """..."""
+    START_TXT = """
+**ʜᴇʟʟᴏ {} 👋**
+
+**ɪ ᴀᴍ ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴀᴜᴛᴏ ʀᴇɴᴀᴍᴇ ʙᴏᴛ ᴡɪᴛʜ ᴍᴀɴʏ ғᴇᴀᴛᴜʀᴇs**
+
+**I can rename your files with custom templates!**
+
+**Use /settings to configure rename options**
+"""
+
+    ABOUT_TXT = """
+╭───────────⍟
+├🤖 **ᴍy ɴᴀᴍᴇ:** [ᴀᴜᴛᴏ ʀᴇɴᴀᴍᴇ](https://t.me/AutoRenameDBot)
+├🖥️ **ꜱᴇʀᴠᴇʀ:** Heroku
+├📕 **ʟɪʙʀᴀʀy:** Pyrogram
+├✏️ **ʟᴀɴɢᴜᴀɢᴇ:** Python 3
+├📂 **ᴅᴀᴛᴀʙᴀꜱᴇ:** MongoDB
+├📊 **ʙᴏᴛ ᴠᴇʀꜱɪᴏɴ:** v2.7.8
+├🌟 **ᴀᴜᴛʜᴏʀ:** [ᴘsᴘᴋ](https://t.me/PSPKADMINBOT)
+╰───────────⍟
+"""
+
+    HELP_TXT = """
+**🔸 Available Commands:**
+
+**📝 Basic Commands:**
+• `/start` - Start the bot
+• `/autorename <template>` - Set auto rename format
+• `/setmedia` - Choose media type preference
+• `/settings` - Open comprehensive settings panel
+• `/help` - Show this help message
+
+**🎯 File Management:**
+• `/ssequence` - Start file sequence
+• `/esequence` - End file sequence
+• Send photo to set thumbnail
+• `/viewthumb` - View current thumbnail
+• `/delthumb` - Delete thumbnail
+
+**⚙️ Settings:**
+• `/metadata` - Configure metadata settings
+• `/set_caption <text>` - Set custom caption
+• `/see_caption` - View current caption
+• `/del_caption` - Delete caption
+
+**💎 Token System:**
+• `/token` - Check token balance
+• `/gentoken` - Generate token link
+
+**📊 Admin Commands:**
+• `/add_token <amount> <user>` - Add tokens
+• `/remove_token <amount> <user>` - Remove tokens
+• `/add_premium <user> <duration>` - Add premium
+• `/remove_premium <user>` - Remove premium
+• `/broadcast <message>` - Broadcast message
+• `/status` - Bot statistics
+"""
+
+    META_TXT = """
+**🔧 How to Set Metadata:**
+
+**Use these commands to set metadata:**
+
+• `/settitle <title>` - Set video title
+• `/setauthor <author>` - Set author name
+• `/setartist <artist>` - Set artist name
+• `/setaudio <audio>` - Set audio title
+• `/setsubtitle <subtitle>` - Set subtitle
+• `/setvideo <video>` - Set video title
+• `/setencoded_by <name>` - Set encoder name
+• `/setcustom_tag <tag>` - Set custom tag
+
+**Example:**
+`/settitle My Video Title`
+`/setauthor @MyChannel`
+
+**Note:** Metadata will be added to all processed files when enabled.
+"""
+
+    PREMIUM_TXT = """
+**💎 Premium Features:**
+
+**🌟 Benefits:**
+• Unlimited file renaming
+• No token consumption
+• Priority processing
+• Faster upload/download speeds
+• Advanced features access
+
+**🎯 How to Get Premium:**
+• Contact admin for premium access
+• Monthly/Yearly subscriptions available
+• Special discounts for bulk purchases
+
+**💬 Contact:** @PSPKADMINBOT
+"""
+
+    FILE_NAME_TXT = """
+**📝 Auto Rename Tutorial:**
+
+**Available Variables:**
+• `episode` or `Episode` or `EPISODE` - Episode number
+• `quality` or `Quality` or `QUALITY` - Video quality
+
+**Example Format:**
+`Naruto Episode [episode] [quality]`
+
+**Current Template:** `{format_template}`
+
+**How to Use:**
+1. Set format using `/autorename <template>`
+2. Send files to be renamed automatically
+3. Bot will detect episode and quality from filename
+
+**Note:** Template will be applied to all files you send!
+"""
+
+    PROGRESS_BAR = """\n
+╭──⌯────────────────────╮
+│ 🔄 **ᴘʀᴏɢʀᴇss :** {0}%
+│ 📊 **ᴘʀᴏᴄᴇssᴇᴅ :** {1}
+│ 📁 **ᴛᴏᴛᴀʟ sɪᴢᴇ :** {2}
+│ 🚀 **sᴘᴇᴇᴅ :** {3}/s
+│ ⏱️ **ᴇᴛᴀ :** {4}
+╰─────────────────⌯─────╯ """
